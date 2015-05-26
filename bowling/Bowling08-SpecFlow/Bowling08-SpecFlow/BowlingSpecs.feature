@@ -3,7 +3,6 @@
 	As a bowler
 	I want to score a bowling game
 
-@mytag
 Scenario: All gutterballs
 	Given I have rolled all gutterballs
 	When I get the score
