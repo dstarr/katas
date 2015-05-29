@@ -16,19 +16,19 @@ namespace Bowling08_SpecFlow
             _game = new Game();
         }
 
-        [Given(@"I have rolled all gutterballs")]
+        [Given(@"I rolled all gutterballs")]
         public void GivenIHaveRolledAllGutterballs()
         {
             RollManyTimes(20, 0);
         }
 
-        [Given(@"I have rolled all ones")]
+        [Given(@"I rolled all ones")]
         public void GivenIHaveRolledAllOnes()
         {
             RollManyTimes(20, 1);
         }
 
-        [Given(@"I have rolled a spare")]
+        [Given(@"I rolled a spare")]
         public void GivenIHaveRolledASpareAndThenA()
         {
             _game.Roll(3);
@@ -37,7 +37,7 @@ namespace Bowling08_SpecFlow
             RollManyTimes(17, 0);
         }
 
-        [Given(@"I have rolled a strike")]
+        [Given(@"I rolled a strike")]
         public void GivenIHaveRolledAStrike()
         {
             _game.Roll(10);
@@ -46,7 +46,7 @@ namespace Bowling08_SpecFlow
             RollManyTimes(17, 0);
         }
 
-        [Given(@"I have rolled all strikes")]
+        [Given(@"I rolled all strikes")]
         public void GivenIHaveRolledAllStrikes()
         {
             RollManyTimes(12, 10);
