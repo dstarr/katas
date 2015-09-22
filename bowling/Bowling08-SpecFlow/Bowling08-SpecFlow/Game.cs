@@ -22,27 +22,49 @@ namespace Bowling08_SpecFlow
             
             for (int frameIndex = 0; frameIndex < 10; frameIndex++)
             {
-                if (_rolls[i] == 10)
+                if (FrameIsStrike(i))
                 {
-                    score += 10 + _rolls[i + 1] + _rolls[i + 2];
+                    score += AddStrikeScore(i);
                     i++;
                 }
-                else if (_rolls[i] + _rolls[i + 1] == 10)
+                else if (FrameIsSpare(i))
                 {
-                    score += 10 + _rolls[i+2];
+                    score += AddSpareScore(i);
                     i += 2;
                 }
                 else
                 {
-                    score += _rolls[i] + _rolls[i + 1];
+                    score += AddTypicalFrameScore(i);
                     i += 2;
                 }
             }
             
-
-
-
             return score;
+        }
+
+        private int AddTypicalFrameScore(int i)
+        {
+            return _rolls[i] + _rolls[i + 1];
+        }
+
+        private int AddSpareScore(int i)
+        {
+            return 10 + _rolls[i+2];
+        }
+
+        private int AddStrikeScore(int i)
+        {
+            return 10 + _rolls[i + 1] + _rolls[i + 2];
+        }
+
+        private bool FrameIsSpare(int i)
+        {
+            return _rolls[i] + _rolls[i + 1] == 10;
+        }
+
+        private bool FrameIsStrike(int i)
+        {
+            return _rolls[i] == 10;
         }
     }
 }
