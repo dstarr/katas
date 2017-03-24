@@ -1,4 +1,4 @@
-import Game.Game;
+import com.Game;
 import org.junit.Before;
 import org.junit.Test;
 
