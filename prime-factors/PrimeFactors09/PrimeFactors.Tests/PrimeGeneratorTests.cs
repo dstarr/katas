@@ -21,16 +21,23 @@ public class PrimeGeneratorTests
     }
     
     [TestMethod]
-    public void Prime_2()
+    public void Primes_for_2()
     {
         int[] results = _primeGenerator.FactorToPrimes(2);
-        CollectionAssert.AreEqual(new int[] { 2 }, results);
+        CollectionAssert.AreEqual(new[] { 2 }, results);
     }
     
     [TestMethod]
-    public void Prime_4()
+    public void Primes_for_4()
     {
         var results = _primeGenerator.FactorToPrimes(4);
         CollectionAssert.AreEqual(new[] { 2, 2 }, results);
+    }
+    
+    [TestMethod]
+    public void Primes_for_7()
+    {
+        var results = _primeGenerator.FactorToPrimes(7);
+        CollectionAssert.AreEqual(new[] { 7 }, results);
     }
 }
